@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/css/timer.css">
+</head>
+<body>
+<header>
+    <%- include('../partials/_header') %>
+</header>
+<main>
+    <section>
+        <div class="container pt-4 pb-5">
+            <div class="row">
+                <div class="col-sm">
+                    <form method="POST" action="/times">
+                        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                        <div id="time-display__container" class="form-group border rounded p-3">
+                            <label for="seconds">Time (MM:SS:MS)</label>
+                            <input id="seconds" class="form-control" name="seconds" type="hidden" step="0.001" value="0"/>
+                            <h1 id="time-display">00:00:00</h1>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <button id="submit-time" class="btn btn-primary w-100" type="submit" disabled="true">Submit</button>
+                            </div>
+                            <div class="col-sm">
+                                <button id="timer-reset-button" class="btn btn-warning w-100" type="button">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm">
+                    <div class="row h-100">
+                        <div class="col-sm">
+                            <button id="timer-startstop-button" class="btn btn-success w-100 h-100">Start</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h4 class="text-center">Scoreboard (Top 5)</h4>
+        <%- include('../partials/times/_times', {times}) %>
+    </section>
+</main>
+<footer class="fixed-bottom">
+    <%- include('../partials/_footer') %>
+    <script src="/js/timer.js"></script>
+</footer>
+</body>
+</html>

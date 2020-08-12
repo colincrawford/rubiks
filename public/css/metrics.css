@@ -1,0 +1,3 @@
+.tab-pane {
+    height: calc(100vh - 300px);
+}

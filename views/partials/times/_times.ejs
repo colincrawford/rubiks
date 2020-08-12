@@ -1,0 +1,35 @@
+<% if (times && times.length) { %>
+<div class="times-table__container container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Time (MM:SS:MS)</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% times.forEach(function(time) { %>
+                <tr>
+                    <td><%= time.time %></td>
+                    <td><%= time.createdAt %></td>
+                    <td>
+                        <form class="delete-time-form" action="/times/<%= time.id %>/delete" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>"/>
+                            <button type="submit" class="btn btn-outlined-danger text-danger">X</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<% } else { %>
+<section class="container h-100">
+    <div class="row h-100 align-items-center">
+        <div class="col">
+            <h2 class="text-center">No Times Yet</h2>
+        </div>
+    </div>
+</section>
+<% } %>

@@ -1,0 +1,6 @@
+node_modules
+
+logs/combined.log
+logs/error.log
+
+sqlite3.db

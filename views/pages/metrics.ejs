@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/css/metrics.css">
+</head>
+<body>
+<header>
+    <%- include('../partials/_header') %>
+</header>
+<main>
+    <section class="pt-4">
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Best Time</th>
+                        <th>Average Time</th>
+                        <th>Number of Times</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><%= bestTimeSeconds %></td>
+                        <td><%= averageTime %></td>
+                        <td><%= numberOfTimes %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-time-trend-tab" data-toggle="tab" href="#nav-time-trend" role="tab" aria-controls="nav-time-trend" aria-selected="true">Time Trend</a>
+                    <a class="nav-item nav-link" id="nav-time-frequencies-tab" data-toggle="tab" href="#nav-time-frequencies" role="tab" aria-controls="nav-time-frequencies" aria-selected="false">Time Frequencies</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-time-trend" role="tabpanel" aria-labelledby="nav-times-trend-tab">
+                    <div class="d-flex h-100 justify-content-center align-items-center">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-time-frequencies" role="tabpanel" aria-labelledby="nav-time-frequencies-tab">
+                    <div class="d-flex h-100 justify-content-center align-items-center">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="fixed-bottom">
+    <%- include('../partials/_footer') %>
+    <script src="/js/metrics.js"></script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/_head') %>
+    <link rel="stylesheet" href="/css/times.css">
+</head>
+<body>
+<header>
+    <%- include('../partials/_header') %>
+</header>
+<main class="fullscreen-with-navbar">
+    <section class="pt-4">
+    <%- include('../partials/times/_times', {times}) %>
+    </section>
+</main>
+<footer class="fixed-bottom">
+    <%- include('../partials/_footer') %>
+</footer>
+</body>
+</html>

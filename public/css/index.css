@@ -1,0 +1,9 @@
+html,
+body {
+  height: 100%
+}
+
+/* occupies the full screen height minus the navbar */
+.fullscreen-with-navbar {
+    height: calc(100% - 56px);
+}
