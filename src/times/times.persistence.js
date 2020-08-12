@@ -81,7 +81,6 @@ export async function getTimeFrequenciesInDB(db, userId) {
     ORDER BY min_time ASC
   `
   const result = await db.query(sql, [userId])
-  console.log('result', result)
   return result || []
 }
 
